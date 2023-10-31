@@ -1,4 +1,5 @@
-package VariablesInputAndOutput;
+package ControlStructures;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -15,7 +16,7 @@ public class Task4 {
             System.out.print("What is " + first + " times " + second + ": ");
             int input = scanner.nextInt();
 
-            if(first * second == input) {
+            if (first * second == input) {
                 score++;
                 System.out.println("That's correct! Score: " + score);
             } else {
