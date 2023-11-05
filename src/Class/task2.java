@@ -19,6 +19,7 @@ public class task2 {
     }
 
 }
+
 class Car {
     public float speed;
     public float gasolineLevel;
@@ -27,17 +28,19 @@ class Car {
     public double tankCapacity;
 
     public Car(String typeName, int topSpeed, double tankCapacity) {
-        speed = 0; gasolineLevel = 0;
+        speed = 0;
+        gasolineLevel = 0;
         this.typeName = typeName;
         this.topSpeed = topSpeed;
         this.tankCapacity = tankCapacity;
 
     }
+
     public void accelerate() {
         if (gasolineLevel > 0) {
             if (speed < this.topSpeed) {
                 speed += 10;
-                if (speed >  this.topSpeed) {
+                if (speed > this.topSpeed) {
                     speed = this.topSpeed;
                 }
             }
@@ -45,23 +48,28 @@ class Car {
             speed = 0;
         }
     }
-    void decelerate(int amount) {
+
+    public void decelerate(int amount) {
         if (gasolineLevel > 0) {
             if (amount > 0)
                 speed = Math.max(0, speed - amount);
         } else
             speed = 0;
     }
-    float getSpeed() {
+
+    public float getSpeed() {
         return speed;
     }
-    String getTypeName() {
+
+    public String getTypeName() {
         return typeName;
     }
-    void fillTank() {
+
+    public void fillTank() {
         gasolineLevel = 100;
     }
-    float getGasolineLevel() {
+
+    public float getGasolineLevel() {
         return (float) ((gasolineLevel * tankCapacity) / 100);
     }
 }
