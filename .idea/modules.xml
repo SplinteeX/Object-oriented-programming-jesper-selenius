@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Inheritcane/Inheritcane.iml" filepath="$PROJECT_DIR$/Inheritcane/Inheritcane.iml" />
       <module fileurl="file://$PROJECT_DIR$/Object-oriented-programming-jesper.iml" filepath="$PROJECT_DIR$/Object-oriented-programming-jesper.iml" />
     </modules>
   </component>
