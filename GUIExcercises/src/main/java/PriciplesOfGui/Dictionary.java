@@ -1,3 +1,4 @@
+package PriciplesOfGui;
 import java.util.HashMap;
 
 public class Dictionary {
@@ -11,7 +12,12 @@ public class Dictionary {
         dictionary.put(word.toLowerCase(), meaning);
     }
 
-    public String searchWord(String word) throws WordNotFoundException {
+    public String searchWord(String word) {
         String meaning = dictionary.get(word.toLowerCase());
+        if (meaning == null) {
+            return "Word not found in the dictionary.";
+        }
+        return meaning;
     }
 }
+
