@@ -7,8 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="PrinciplesOfGuiEventsMVCModel" />
-        <module name="PrinciplesOfGui" />
+        <module name="Test" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="PrinciplesOfGui" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
