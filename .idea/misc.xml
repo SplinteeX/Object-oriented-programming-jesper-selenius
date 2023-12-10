@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/PrinciplesOfGui/pom.xml" />
         <option value="$PROJECT_DIR$/Test/pom.xml" />
+        <option value="$PROJECT_DIR$/GUIExcercises/pom.xml" />
+        <option value="$PROJECT_DIR$/Database/pom.xml" />
       </list>
     </option>
   </component>
