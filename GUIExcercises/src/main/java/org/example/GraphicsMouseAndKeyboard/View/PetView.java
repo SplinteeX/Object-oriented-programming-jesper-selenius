@@ -13,7 +13,7 @@ public class PetView extends JPanel {
 
     public PetView(Pet pet) {
         this.pet = pet;
-        this.petImage = Toolkit.getDefaultToolkit().getImage("GUIExcercises/src/main/java/GraphicsMouseAndKeyboard/mouse.png");
+        this.petImage = Toolkit.getDefaultToolkit().getImage("GUIExcercises/src/main/java/org/example/GraphicsMouseAndKeyboard/mouse.png");
 
         MediaTracker tracker = new MediaTracker(this);
         tracker.addImage(petImage, 0);
