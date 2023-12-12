@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.GuiDesignTools.Controller.NoteController">
+    <children>
+        <VBox layoutX="14.0" layoutY="14.0" prefHeight="156.0" prefWidth="180.0">
+            <children>
+                <Label prefHeight="17.0" prefWidth="181.0" text="Title" />
+                <TextArea fx:id="titleField" />
+                <Label prefHeight="17.0" prefWidth="186.0" text="Content of the note" />
+                <TextField fx:id="contentArea" prefHeight="121.0" prefWidth="180.0" />
+                <Button fx:id="addButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Add" />
+            </children>
+        </VBox>
+        <VBox layoutX="276.0" layoutY="14.0" prefHeight="200.0" prefWidth="310.0">
+            <children>
+                <ListView fx:id="notesListView" prefHeight="200.0" prefWidth="388.0" />
+                <Button fx:id="editButton" onAction="#editNote" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Edit" />
+                <Button fx:id="deleteButton" onAction="#deleteNote" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Delete" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
