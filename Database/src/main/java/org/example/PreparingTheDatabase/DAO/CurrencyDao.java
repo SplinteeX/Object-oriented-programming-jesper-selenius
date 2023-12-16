@@ -3,20 +3,53 @@ import org.example.PreparingTheDatabase.Datasource.ConnectionToDb;
 import java.sql.*;
 import java.util.*;
 public class CurrencyDao {
-    public double getCurrencyRate(String currencyAbbreviation) {
-        double exchangeRate = 0;
-        String sql = "SELECT * FROM Currency WHERE abbreviation = ?";
-        Connection conn = ConnectionToDb.getConnection();
-        try {
-            Statement s = conn.createStatement();
-            ResultSet rs = s.executeQuery(sql);
-            exchangeRate = rs.getDouble("conversion_rate");
-            System.out.println(exchangeRate);
 
+    public double getConversionRateByAbbreviation(String abbreviation) {
+        Connection connection = null;
+        String sql = "SELECT conversion_rate FROM currency WHERE abbreviation = ?";
+        double conversionRate = 0;
+
+        try {
+            connection = ConnectionToDb.getConnection();
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, abbreviation);
+
+                try (ResultSet rs = preparedStatement.executeQuery()) {
+                    if (rs.next()) {
+                        conversionRate = rs.getDouble("conversion_rate");
+                    }
+                }
+            }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-        return exchangeRate;
 
+        return conversionRate;
     }
+
+    public boolean isConnectionValid() {
+        Connection connection = null;
+        boolean isValid = false;
+
+        try {
+            connection = ConnectionToDb.getConnection();
+            isValid = connection.isValid(5);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionToDb.Terminate();
+        }
+
+        return isValid;
+    }
+
 }

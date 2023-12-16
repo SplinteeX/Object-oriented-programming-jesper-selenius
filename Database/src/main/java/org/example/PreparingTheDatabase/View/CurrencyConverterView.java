@@ -3,10 +3,7 @@ package org.example.PreparingTheDatabase.View;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -89,5 +86,14 @@ public class CurrencyConverterView extends Application {
         primaryStage.setTitle("Currency Converter");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    public void displayDatabaseConnectionError() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Database Connection Error");
+        alert.setHeaderText(null);
+        alert.setContentText("Error connecting to the database. Please check your database connection.");
+        alert.showAndWait();
+        System.exit(0);
     }
 }
