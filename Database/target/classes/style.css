@@ -1,0 +1,22 @@
+.label {
+    -fx-font-family: "sans-serif";
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.text-field {
+    -fx-font-family: "sans-serif";
+    -fx-font-size: 14px;
+}
+
+.choice-box {
+    -fx-font-family: "sans-serif";
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.button {
+    -fx-font-family: "sans-serif";
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
