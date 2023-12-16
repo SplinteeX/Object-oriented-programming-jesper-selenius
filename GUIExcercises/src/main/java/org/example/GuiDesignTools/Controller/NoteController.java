@@ -11,52 +11,77 @@ import javafx.scene.control.TextField;
 
 public class NoteController {
     @FXML
-    private TextField titleField;
+    private Notebook notebook;
+    @FXML
+    private TextArea titleField;
+    @FXML
+    private TextField contentArea;
 
     @FXML
-    private TextArea contentArea;
+    private ListView<String> notesListView;
 
     @FXML
     private Button addButton;
 
-    @FXML
-    private TextArea notesTextArea;
 
     @FXML
-    private ListView<String> notesList;
-
-    private Notebook notebook;
-
-    // Method to set the notebook
-    public void setNotebook(Notebook notebook) {
-        this.notebook = notebook;
+    private void initialize() {
+        addButton.setOnAction(event -> handleAddButton());
     }
 
-    // Method to handle adding notes
     @FXML
     private void handleAddButton() {
         String title = titleField.getText();
         String content = contentArea.getText();
+        System.out.println("Title: " + title + "\nContent: " + content);
 
-        if (!title.isEmpty() && !content.isEmpty() && notebook != null) {
+        if (!title.isEmpty() && !content.isEmpty()) {
             Note newNote = new Note(title, content);
             notebook.addNote(newNote);
             updateDisplay();
         }
     }
 
-    // Method to update the display
     private void updateDisplay() {
-        notesTextArea.clear(); // Clear the TextArea
-        if (notebook != null) {
-            for (Note note : notebook.getNotes()) {
-                notesTextArea.appendText("Title: " + note.getTitle() + "\n");
-                notesTextArea.appendText("Content: " + note.getContent() + "\n\n");
+        notesListView.getItems().clear();
+        for (Note note : notebook.getNotes()) {
+            notesListView.getItems().add("Title: " + note.getTitle() + "\n" + "Content: " + note.getContent() + "\n\n");
+        }
+    }
+
+
+
+    @FXML
+    private void deleteNote() {
+        int selectedIndex = notesListView.getSelectionModel().getSelectedIndex();
+        if (selectedIndex != -1) {
+            notesListView.getItems().remove(selectedIndex);
+
+        }
+    }
+    @FXML
+    private void editNote() {
+        int selectedIndex = notesListView.getSelectionModel().getSelectedIndex();
+        if (selectedIndex != -1) {
+            String title = titleField.getText();
+            String content = contentArea.getText();
+
+            if (!title.isEmpty() && !content.isEmpty()) {
+                Note editedNote = new Note(title, content);
+                notebook.editNote(selectedIndex, editedNote);
+                updateDisplay();
             }
         }
     }
 
+    public void setNotebook(Notebook notebook) {
+        this.notebook = notebook;
+    }
+
+
+
     public static void main(String[] args) {
         Main.launch(Main.class);
     }
+
 }

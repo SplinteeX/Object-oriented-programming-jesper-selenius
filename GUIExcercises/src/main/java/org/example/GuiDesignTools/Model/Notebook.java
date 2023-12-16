@@ -19,4 +19,10 @@ public class Notebook {
     public List<Note> getNotes() {
         return notes;
     }
+
+    public void editNote(int index, Note editedNote) {
+        if (index >= 0 && index < notes.size()) {
+            notes.set(index, editedNote);
+        }
+    }
 }
