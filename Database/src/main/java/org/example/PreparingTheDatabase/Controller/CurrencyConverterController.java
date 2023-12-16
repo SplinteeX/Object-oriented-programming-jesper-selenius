@@ -29,10 +29,6 @@ public class CurrencyConverterController {
             view.displayDatabaseConnectionError();
         }
     }
-
-    public CurrencyConverterController(CurrencyConverter converter, CurrencyConverterView currencyConverterView) {
-    }
-
     public String convertCurrency(String fromCurrency, String toCurrency, double amount) {
         return currencyConverter.convertCurrency(fromCurrency, toCurrency, amount);
     }
@@ -40,8 +36,9 @@ public class CurrencyConverterController {
     public List<String> getAllCurrencies() {
         return currencyConverter.getAllCurrencies();
     }
+
     public static void main(String[] args) {
         CurrencyConverterView.launch(CurrencyConverterView.class);
     }
-
 }
+

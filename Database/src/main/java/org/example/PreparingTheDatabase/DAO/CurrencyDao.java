@@ -2,6 +2,9 @@ package org.example.PreparingTheDatabase.DAO;
 import org.example.PreparingTheDatabase.Datasource.ConnectionToDb;
 import java.sql.*;
 import java.util.*;
+
+import java.sql.*;
+
 public class CurrencyDao {
 
     public double getConversionRateByAbbreviation(String abbreviation) {
@@ -46,7 +49,7 @@ public class CurrencyDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            ConnectionToDb.Terminate();
+            ConnectionToDb.terminate();
         }
 
         return isValid;

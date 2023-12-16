@@ -9,6 +9,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.example.PreparingTheDatabase.Controller.CurrencyConverterController;
+import org.example.PreparingTheDatabase.DAO.CurrencyDao;
 import org.example.PreparingTheDatabase.Model.CurrencyConverter;
 
 
@@ -18,8 +19,9 @@ public class CurrencyConverterView extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        CurrencyDao currencyDao = new CurrencyDao();
         CurrencyConverter converter = new CurrencyConverter();
-        controller = new CurrencyConverterController(converter, this);
+        controller = new CurrencyConverterController(currencyDao, converter, this);
 
         TextField amountTextField = new TextField();
         Button convertButton = new Button("Convert");
@@ -77,7 +79,7 @@ public class CurrencyConverterView extends Application {
         toCurrencyVBox.setAlignment(Pos.CENTER);
 
         FlowPane root = new FlowPane(10, 10, fromCurrencyVBox, toCurrencyVBox, convertButton);
-        Scene scene = new Scene(root, 400, 150);
+        Scene scene = new Scene(root, 600, 350);
 
         root.setAlignment(Pos.CENTER);
 

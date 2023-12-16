@@ -1,6 +1,5 @@
 package org.example.PreparingTheDatabase.Model;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
