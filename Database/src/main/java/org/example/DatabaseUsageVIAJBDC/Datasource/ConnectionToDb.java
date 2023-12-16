@@ -1,8 +1,4 @@
-package org.example.PreparingTheDatabase.Datasource;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
+package org.example.DatabaseUsageVIAJBDC.Datasource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

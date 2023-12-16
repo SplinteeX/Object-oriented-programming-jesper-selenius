@@ -1,8 +1,8 @@
-package org.example.PreparingTheDatabase.Controller;
+package org.example.DatabaseUsageVIAJBDC.Controller;
 
-import org.example.PreparingTheDatabase.Model.CurrencyConverter;
-import org.example.PreparingTheDatabase.View.CurrencyConverterView;
-import org.example.PreparingTheDatabase.DAO.CurrencyDao;
+import org.example.DatabaseUsageVIAJBDC.Model.CurrencyConverter;
+import org.example.DatabaseUsageVIAJBDC.View.CurrencyConverterView;
+import org.example.DatabaseUsageVIAJBDC.DAO.CurrencyDao;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.example.PreparingTheDatabase.Model;
+package org.example.DatabaseUsageVIAJBDC.Model;
 
 public class Currency {
     private String name;

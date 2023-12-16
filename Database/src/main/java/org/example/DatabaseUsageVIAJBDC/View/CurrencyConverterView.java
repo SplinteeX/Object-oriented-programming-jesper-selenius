@@ -1,4 +1,4 @@
-package org.example.PreparingTheDatabase.View;
+package org.example.DatabaseUsageVIAJBDC.View;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -8,9 +8,9 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.example.PreparingTheDatabase.Controller.CurrencyConverterController;
-import org.example.PreparingTheDatabase.DAO.CurrencyDao;
-import org.example.PreparingTheDatabase.Model.CurrencyConverter;
+import org.example.DatabaseUsageVIAJBDC.Controller.CurrencyConverterController;
+import org.example.DatabaseUsageVIAJBDC.DAO.CurrencyDao;
+import org.example.DatabaseUsageVIAJBDC.Model.CurrencyConverter;
 
 
 public class CurrencyConverterView extends Application {

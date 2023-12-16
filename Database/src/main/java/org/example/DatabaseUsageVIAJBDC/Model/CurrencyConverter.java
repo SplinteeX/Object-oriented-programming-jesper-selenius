@@ -1,4 +1,4 @@
-package org.example.PreparingTheDatabase.Model;
+package org.example.DatabaseUsageVIAJBDC.Model;
 
 import java.util.ArrayList;
 import java.util.HashMap;

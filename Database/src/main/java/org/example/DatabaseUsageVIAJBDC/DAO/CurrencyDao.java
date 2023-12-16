@@ -1,8 +1,5 @@
-package org.example.PreparingTheDatabase.DAO;
-import org.example.PreparingTheDatabase.Datasource.ConnectionToDb;
-import java.sql.*;
-import java.util.*;
-
+package org.example.DatabaseUsageVIAJBDC.DAO;
+import org.example.DatabaseUsageVIAJBDC.Datasource.ConnectionToDb;
 import java.sql.*;
 
 public class CurrencyDao {
